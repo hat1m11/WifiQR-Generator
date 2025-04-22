@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Wi-Fi QR Code Generator</h1>
+            <p class="subtitle">Generate a QR code for easy Wi-Fi connection</p>
+            
+            <div class="form-group">
+                <label for="ssid">Wi-Fi Network Name</label>
+                <div class="input-icon">
+                    <i class="fas fa-wifi"></i>
+                    <input type="text" id="ssid" placeholder="Enter SSID">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Wi-Fi Password</label>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <i class="fas fa-eye-slash toggle-password" id="togglePassword"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="security">Security Type</label>
+                <div class="select-wrapper">
+                    <select id="security">
+                        <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
+                        <option value="nopass">No Password</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="btn">Generate QR Code</button>
+
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Generating QR code...</p>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div id="qrcode"></div>
+                <button id="downloadBtn" class="btn secondary">Download QR Code</button>
+                <button id="newBtn" class="btn tertiary">Generate New</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Wi-Fi QR Code Generator</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
